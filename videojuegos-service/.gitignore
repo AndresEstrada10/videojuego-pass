@@ -3,6 +3,19 @@
 /node_modules
 /build
 
+# Ignorar archivos de entorno
+.env
+
+# Ignorar la carpeta de node_modules
+node_modules/
+
+# Ignorar archivos de build o dist
+dist/
+build/
+
+# Ignorar logs
+*.log
+
 # Logs
 logs
 *.log

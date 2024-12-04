@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "https://videojuego-pass-2.onrender.com" // Dirección del backend
+  baseURL: 'http://localhost:3000', // Dirección del backend
 });
 
 // Endpoints de videojuegos
@@ -17,3 +17,4 @@ export const removeFromCarrito = (id) => api.delete(`/carrito/${id}`);
 export const createRegistro = (data) => api.post('/registro', data); // Para crear un nuevo registro de compra
 
 export default api;
+
