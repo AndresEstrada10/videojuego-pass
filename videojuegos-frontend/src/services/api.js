@@ -1,9 +1,13 @@
 import axios from 'axios';
+// Obtener la URL de la API dependiendo del entorno
+const apiUrl = process.env.NODE_ENV === 'development' 
+  ? process.env.REACT_APP_API_URL  // Usar localhost en desarrollo
+  : process.env.REACT_APP_API_URL_PROD;  // Usar URL de producción
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL || 'https://videojuego-backend.onrender.com', // Dirección del backend
-  timeout: 10000,   
+  baseURL: apiUrl,  // URL dinámica según el entorno
 });
+
 // Endpoints de videojuegos
 export const getVideojuegos = () => api.get('/videojuegos');
 export const getVideojuegoById = (id) => api.get(`/videojuegos/${id}`);
