@@ -15,7 +15,7 @@ async function bootstrap() {
   // Registra el interceptor globalmente
  
   const port = process.env.PORT || 3000;  // Asegúrate de usar la sintaxis correcta
-  await app.listen(port, '0.0.0.0');
+  await app.listen(port);
 }
 
 bootstrap();
