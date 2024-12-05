@@ -4,7 +4,6 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_BACKEND_URL || 'https://videojuego-backend.onrender.com', // Dirección del backend
   timeout: 10000,   
 });
-
 // Endpoints de videojuegos
 export const getVideojuegos = () => api.get('/videojuegos');
 export const getVideojuegoById = (id) => api.get(`/videojuegos/${id}`);
