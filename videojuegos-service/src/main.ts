@@ -1,17 +1,17 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { parse } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Habilitar CORS para permitir solicitudes desde el frontend
+  // Habilitar CORS para el frontend en Render
   app.enableCors({
-    origin: 'http://localhost:3001', // Dirección del frontend
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
+    origin: 'https://videojuego-backend.onrender.com', // Cambia esto por la URL de tu frontend
+    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   });
 
-  await app.listen(parseInt(process.env.PORT));
+  await app.listen(4000); // Asegúrate de que el backend escucha en el puerto correcto
 }
+
 bootstrap();
