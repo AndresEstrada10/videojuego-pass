@@ -7,11 +7,13 @@ export class VideojuegosController {
   constructor(private readonly videojuegosService: VideojuegosService) {}
 
   @Get()
-  findAll() {
-    const videojuegos = this.videojuegosService.findAll();
-    console.log(videojuegos);  
+  async findAll() {
+    // Asegúrate de que todas las promesas se resuelvan
+    const videojuegos = await this.videojuegosService.findAll(); 
+    console.log(videojuegos);// Ejemplo con await
     return videojuegos;
   }
+  
 
   @Get(':id')
   findOne(@Param('id') id: number) {

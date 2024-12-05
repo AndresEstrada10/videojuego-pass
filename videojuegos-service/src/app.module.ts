@@ -11,14 +11,14 @@ import { RegistroModule } from './registro/registro.module';
       isGlobal: true, // Hace que las variables estén disponibles globalmente
     }),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: process.env.MYSQL_HOST,
-      port: parseInt(process.env.MYSQL_PORT, 10) || 3306,
-      username: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
-      database: process.env.MYSQL_DATABASE,
+     type: 'mysql',
+      host: process.env.DB_HOST,          // Host de la base de datos
+      port: parseInt(process.env.DB_PORT), // Puerto de la base de datos
+      username: process.env.DB_USERNAME,   // Usuario de la base de datos
+      password: process.env.DB_PASSWORD,   // Contraseña de la base de datos
+      database: process.env.DB_NAME,       // Nombre de la base de datos
       autoLoadEntities: true,
-      synchronize: false,
+      synchronize: true,
     }),
     VideojuegosModule,
     CarritoModule,
