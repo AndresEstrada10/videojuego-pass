@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Habilitar CORS para el frontend
   app.enableCors({
-    origin: 'https://videojuego-pass.onrender.com',
+    origin: [process.env.CORS_ORIGIN, process.env.CORS_LOCAL_ORIGIN],
     methods: ['GET', 'POST', 'DELETE', 'PUT'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   });
