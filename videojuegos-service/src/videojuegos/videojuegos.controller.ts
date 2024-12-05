@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { VideojuegosService } from './videojuegos.service';
 import { Videojuego } from './entities/videojuego.entity';
 
@@ -8,7 +8,9 @@ export class VideojuegosController {
 
   @Get()
   findAll() {
-    return this.videojuegosService.findAll();
+    const videojuegos = this.videojuegosService.findAll();
+    console.log(videojuegos);  
+    return videojuegos;
   }
 
   @Get(':id')

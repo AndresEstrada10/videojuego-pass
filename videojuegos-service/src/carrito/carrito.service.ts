@@ -17,7 +17,9 @@ export class CarritoService {
   }
 
   // Agregar un videojuego al carrito
-  async agregarAlCarrito(agregarCarritoDto: AgregarCarritoDto): Promise<Carrito> {
+  async agregarAlCarrito(
+    agregarCarritoDto: AgregarCarritoDto,
+  ): Promise<Carrito> {
     // Verificar si el videojuego ya está en el carrito
     const videojuegoEnCarrito = await this.carritoRepository.findOne({
       where: { videojuegoId: agregarCarritoDto.id },
