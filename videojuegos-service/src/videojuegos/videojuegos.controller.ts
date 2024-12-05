@@ -4,8 +4,6 @@ import { Videojuego } from './entities/videojuego.entity';
 
 @Controller('videojuegos')
 export class VideojuegosController {
-  @Get()
-  @Header('Cache-Control', 'no-cache, no-store, must-revalidate')
   constructor(private readonly videojuegosService: VideojuegosService) {}
 
   @Get()
