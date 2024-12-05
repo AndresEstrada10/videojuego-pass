@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 // Obtener la URL de la API dependiendo del entorno
 const apiUrl = process.env.NODE_ENV === 'development' 
   ? process.env.REACT_APP_API_URL  // Usar localhost en desarrollo
@@ -7,6 +8,7 @@ const apiUrl = process.env.NODE_ENV === 'development'
 const api = axios.create({
   baseURL: apiUrl,  // URL dinámica según el entorno
 });
+//10.220.210.79:3001/videojuegos') // Cambia "192.168.1.x" por la IP de tu computadora
 
 // Endpoints de videojuegos
 export const getVideojuegos = () => api.get('/videojuegos');
