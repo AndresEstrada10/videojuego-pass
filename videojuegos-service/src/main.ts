@@ -11,7 +11,7 @@ async function bootstrap() {
     allowedHeaders: ['Content-Type', 'Authorization'],
   });
 
-  await app.listen(4000); // Asegúrate de que el backend escucha en el puerto correcto
+  await app.listen(3000); // Asegúrate de que el backend escucha en el puerto correcto
 }
 
 bootstrap();
