@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL || 'https://videojuego-backend.onrender.com', // Dirección del backend
+  baseURL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:3000', // Dirección del backend
   timeout: 10000,   
 });
 // Endpoints de videojuegos
